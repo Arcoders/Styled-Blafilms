@@ -6,8 +6,8 @@ import { Movie } from './services'
 import { DEFAULT_QUERY, FIRST_PAGE  } from './constant'
 
 function App() {
-  const [query, setQuery] = useState(DEFAULT_QUERY )
-  const [currentPage, setCurrentPage] = useState(FIRST_PAGE )
+  const [query, setQuery] = useState(DEFAULT_QUERY)
+  const [currentPage, setCurrentPage] = useState(FIRST_PAGE)
   const [moviesData, setMoviesData] = useState({
     totalResults: 0,
     error: null,
