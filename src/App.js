@@ -3,10 +3,11 @@ import Feedback from './components/Feedback'
 import Search from './components/Search'
 import Films from './components/Films'
 import { Movie } from './services'
+import { DEFAULT_QUERY, FIRST_PAGE  } from './constant'
 
 function App() {
-  const [query, setQuery] = useState('king')
-  const [currentPage, setCurrentPage] = useState(1)
+  const [query, setQuery] = useState(DEFAULT_QUERY )
+  const [currentPage, setCurrentPage] = useState(FIRST_PAGE )
   const [moviesData, setMoviesData] = useState({
     totalResults: 0,
     error: null,
@@ -15,25 +16,13 @@ function App() {
 
   const handleOnSearch = useCallback(async () => {
     try {
-      const {
-        Search: films,
-        Error: error,
-        totalResults,
-      } = await Movie.find({
+      const { Search: films, Error: error, totalResults } = await Movie.find({
         query,
-        currentPage,
+        currentPage
       })
-      setMoviesData({
-        totalResults,
-        films,
-        error,
-      })
+      setMoviesData({ totalResults, films, error })
     } catch (error) {
-      setMoviesData({
-        totalResults: 0,
-        films: [],
-        error: error.message,
-      })
+      setMoviesData({ totalResults: 0, films: [], error: error.message })
     }
   }, [currentPage, query])
 
@@ -51,6 +40,7 @@ function App() {
         handleOnSearch={handleOnSearch}
       />
       {error && <Feedback message={error} />}
+
       {!!films?.length && !error && (
         <Films
           films={films}

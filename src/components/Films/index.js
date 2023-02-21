@@ -1,14 +1,10 @@
 import React from 'react'
 import Card from '../Card'
 import { Result } from '../../style'
-
-const ITEMS_PERPAGE = 10
-const FIRST_PAGE = 1
+import { ITEMS_PERPAGE } from '../../constant'
 
 function Films({ films, setCurrentPage, totalResults, currentPage }) {
-  const isLastPage =
-    currentPage >=
-    Math.ceil(parseInt(totalResults, ITEMS_PERPAGE) / ITEMS_PERPAGE)
+  const isLastPage = currentPage >= Math.ceil(parseInt(totalResults, ITEMS_PERPAGE) / ITEMS_PERPAGE)
 
   const handleNext = () => {
     if (!isLastPage) setCurrentPage(currentPage + 1)
