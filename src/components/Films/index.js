@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../Card'
 import { Result } from '../../style'
-import { ITEMS_PERPAGE } from '../../constant'
+import { ITEMS_PERPAGE, FIRST_PAGE} from '../../constant'
 
 function Films({ films, setCurrentPage, totalResults, currentPage }) {
   const isLastPage = currentPage >= Math.ceil(parseInt(totalResults, ITEMS_PERPAGE) / ITEMS_PERPAGE)

@@ -16,11 +16,11 @@ export const Card = {
 
     `,
   data: StyledComponent.div`
-
+    width: 90%;
     text-align: left;
     display: flex;
     flex-direction: column;
-    margin: 0 10px;
+    margin: 10px;
     justify-content: space-between;
     `,
   Title: StyledComponent.div`
