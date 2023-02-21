@@ -1,8 +1,6 @@
-## Puesta en marcha.
+## Setup
 
-Debes tener [node](https://nodejs.org/es/) y [yarn](https://yarnpkg.com/) instalados.
-Entra en el directorio y ejecuta `yarn` para descargar las dependencias.
-Después, simplemente ejecutando `yarn start` se arrancará la aplicación.
+You must have node and yarn installed. Go into the directory and run yarn to download the dependencies. Then simply getting yarn start will start the application.
 
 
 ### Preview
